@@ -2,20 +2,18 @@
 "use client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { EthereumGetBalance } from './ethereum/get-balance'
+import { EthereumGetBlockByNumber } from './ethereum/get-block-by-number'
+import { EthereumGetTransactionByHash } from "./ethereum/get-transaction-by-hash"
+import { EthereumGetGasPrice } from "./ethereum/get-gas-price"
 
 export function EthereumExplorer() {
   return (
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      <Card>
-        <CardHeader>
-          <CardTitle>Get Balance</CardTitle>
-          <CardDescription>Retrieve the balance of an Ethereum address</CardDescription>
-        </CardHeader>
-        <CardContent>
-          {/* Add input and button here */}
-        </CardContent>
-      </Card>
-      {/* Add more cards for other Ethereum RPC calls */}
+    <div className="grid gap-4 md:grid-cols-2">
+      <EthereumGetBalance />
+      <EthereumGetBlockByNumber />
+      <EthereumGetTransactionByHash/>
+      <EthereumGetGasPrice />
     </div>
   )
 }
