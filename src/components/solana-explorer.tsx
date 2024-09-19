@@ -1,21 +1,19 @@
 // components/solana-explorer.tsx
 "use client"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from 'react'
+import { SolanaGetAccountInfo } from './solana/get-account-info'
+import { SolanaGetBalance } from './solana/get-balance'
+import { SolanaGetTransaction } from './solana/get-transaction'
+import { SolanaGetBlock } from './solana/get-block'
 
 export function SolanaExplorer() {
   return (
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      <Card>
-        <CardHeader>
-          <CardTitle>Get Account Info</CardTitle>
-          <CardDescription>Retrieve information about a Solana account</CardDescription>
-        </CardHeader>
-        <CardContent>
-          {/* Add input and button here */}
-        </CardContent>
-      </Card>
-      {/* Add more cards for other Solana RPC calls */}
+    <div className="grid gap-4 md:grid-cols-2">
+      <SolanaGetAccountInfo />
+      <SolanaGetBalance />
+      <SolanaGetTransaction />
+      <SolanaGetBlock />
     </div>
   )
 }
