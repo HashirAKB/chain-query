@@ -4,6 +4,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { SolanaExplorer } from "@/components/solana-explorer"
 import { EthereumExplorer } from "@/components/ethereum-explorer"
+import { RPCPlayground } from "@/components/rpc-playground"
 
 export default function Home() {
   return (
@@ -13,12 +14,16 @@ export default function Home() {
         <TabsList>
           <TabsTrigger value="solana">Solana</TabsTrigger>
           <TabsTrigger value="ethereum">Ethereum</TabsTrigger>
+          <TabsTrigger value="playground">RPC Playground</TabsTrigger>
         </TabsList>
         <TabsContent value="solana">
           <SolanaExplorer />
         </TabsContent>
         <TabsContent value="ethereum">
           <EthereumExplorer />
+        </TabsContent>
+        <TabsContent value="playground">
+          <RPCPlayground />
         </TabsContent>
       </Tabs>
     </div>

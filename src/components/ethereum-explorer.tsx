@@ -1,7 +1,6 @@
 // components/ethereum-explorer.tsx
 "use client"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { EthereumGetBalance } from './ethereum/get-balance'
 import { EthereumGetBlockByNumber } from './ethereum/get-block-by-number'
 import { EthereumGetTransactionByHash } from "./ethereum/get-transaction-by-hash"

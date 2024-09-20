@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { Replace } from 'lucide-react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,7 +29,8 @@ export default function RootLayout({
         >
           <div className="min-h-screen bg-background">
             <header className="container mx-auto p-4 flex justify-between items-center">
-              <h1 className="text-2xl font-bold">ChainQuery</h1>
+              <Replace/>
+              <h1 className="text-2xl font-bold"> ChainQuery</h1>
               <ThemeToggle />
             </header>
             <main>
