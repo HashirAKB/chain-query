@@ -18,7 +18,6 @@ export async function POST(request: Request) {
     let result
 
     if (blockchain === 'solana') {
-      // @ts-ignore: Dynamically calling methods on Connection
       result = await solanaConnection[method](...params)
     } else if (blockchain === 'ethereum') {
       result = await ethereumProvider.send(method, params)

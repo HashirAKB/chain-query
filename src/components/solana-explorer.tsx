@@ -1,7 +1,6 @@
 // components/solana-explorer.tsx
 "use client"
 
-import { useState } from 'react'
 import { SolanaGetAccountInfo } from './solana/get-account-info'
 import { SolanaGetBalance } from './solana/get-balance'
 import { SolanaGetTransaction } from './solana/get-transaction'
