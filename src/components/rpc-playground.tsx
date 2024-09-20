@@ -13,7 +13,7 @@ export function RPCPlayground() {
   const [blockchain, setBlockchain] = useState<'solana' | 'ethereum'>('solana')
   const [method, setMethod] = useState('')
   const [params, setParams] = useState('')
-  const [result, setResult] = useState<any>(null)
+  const [result, setResult] = useState<unknown>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 

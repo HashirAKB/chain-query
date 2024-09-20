@@ -9,7 +9,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 export function EthereumGetBlockByNumber() {
   const [blockNumber, setBlockNumber] = useState('')
-  const [result, setResult] = useState<any>(null)
+  const [result, setResult] = useState<unknown>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
@@ -55,7 +55,8 @@ export function EthereumGetBlockByNumber() {
             <AlertDescription>{error}</AlertDescription>
           </Alert>
         )}
-        {result && (
+        {
+        result && (
           <div className="mt-4">
             <h3 className="font-semibold">Result:</h3>
             <pre className="bg-secondary p-2 rounded-md overflow-x-auto">
