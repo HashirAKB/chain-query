@@ -33,6 +33,15 @@ export function SolanaGetAccountInfo() {
         }
     }
 
+    const formatLamports = (lamports: number) => {
+        const sol = lamports / 1000000000; // LAMPORTS_PER_SOL
+        return `${sol.toFixed(9)} SOL (${lamports.toLocaleString()} lamports)`;
+    };
+
+    const formatRentEpoch = (rentEpoch: number) => {
+        return rentEpoch === 18446744073709552000 ? "Max Value (2^64)" : rentEpoch.toString();
+    };
+
     return (
         <Card>
             <CardHeader>
@@ -57,12 +66,14 @@ export function SolanaGetAccountInfo() {
             </Alert>
             )}
             {result && (
-            <div className="mt-4">
-                <h3 className="font-semibold">Result:</h3>
-                <pre className="bg-secondary p-2 rounded-md overflow-x-auto">
-                {JSON.stringify(result, null, 2)}
-                </pre>
-            </div>
+            <div className="mt-4 space-y-2">
+                <h3 className="font-semibold">Account Information:</h3>
+                        <div><strong>Address:</strong> {address}</div>
+                        <div><strong>Balance:</strong> {formatLamports(result.lamports)}</div>
+                        <div><strong>Owner:</strong> {result.owner}</div>
+                        <div><strong>Executable:</strong> {result.executable ? 'Yes' : 'No'}</div>
+                        <div><strong>Rent Epoch:</strong> {formatRentEpoch(result.rentEpoch)}</div>
+                </div>
             )}
             </CardContent>
         </Card>
